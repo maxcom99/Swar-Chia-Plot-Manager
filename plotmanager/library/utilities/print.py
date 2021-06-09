@@ -133,7 +133,7 @@ def get_job_history(analysis, view_settings):
         rows.append(_get_history_row_info(data['data'], view_settings))
     rows.sort(key=lambda x: (x[1]))
     rows = [headers] + rows
-    return pretty_print_table(rows[:6])
+    return pretty_print_table(rows[-6:])
 
 
 def get_drive_data(drives, running_work, job_data):
