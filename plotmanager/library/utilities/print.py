@@ -132,8 +132,8 @@ def get_job_history(analysis, view_settings):
     for file_name, data in analysis['files'].items():
         rows.append(_get_history_row_info(data['data'], view_settings))
     rows.sort(key=lambda x: (x[1]))
-    rows = [headers] + rows
-    return pretty_print_table(rows[-6:])
+    rows = [headers] + rows[-6:]
+    return pretty_print_table(rows)
 
 
 def get_drive_data(drives, running_work, job_data):
